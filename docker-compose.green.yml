@@ -12,7 +12,7 @@ services:
       - 'traefik.http.routers.api_events_shatynska_green.tls.certresolver=letsEncrypt'
       - 'traefik.http.services.api_events_shatynska_green.loadbalancer.server.port=3000'
     ports:
-      - 3030:3000
+      - 3040:3000
     networks:
       - traefik-public
       - events-shatynska
