@@ -7,11 +7,36 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model Event {
+  id          String   @id @default(uuid())
+  title       String
+  description String?
+  startDate   DateTime @map("start_date")
+  organizer   String?
+  image       String?
+  users       User[]
+
+  @@map("events")
+}
+
+model Referral {
+  id    String @id @default(uuid())
+  title String
+  users User[]
+
+  @@map("referrals")
+}
+
 model User {
-  id        String   @id @default(uuid())
-  fullName  String   @unique @map("full_name")
-  birthDate DateTime @map("birth_date")
-  createdAt DateTime @default(now()) @map("created_at")
+  id         String    @id @default(uuid())
+  fullName   String    @map("full_name")
+  email      String
+  birthDate  DateTime  @map("birth_date")
+  referral   Referral? @relation(fields: [referralId], references: [id], onDelete: SetNull)
+  referralId String?   @map("referral_id")
+  event      Event     @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  eventId    String    @map("event_id")
+  createdAt  DateTime  @default(now()) @map("created_at")
 
   @@map("users")
 }
