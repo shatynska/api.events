@@ -34,4 +34,4 @@ COPY --chown=node:node --from=build /app/.env ./
 COPY --chown=node:node --from=build /app/node_modules ./node_modules
 COPY --chown=node:node --from=build /app/dist ./dist
 
-CMD [ "node", "dist/main.js" ]
+CMD [ "node", "dist/src/main.js" ]
