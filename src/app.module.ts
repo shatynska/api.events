@@ -1,4 +1,7 @@
 import { Module } from '@nestjs/common';
+import { ParticipantsModule } from './participants/participants.module';
 
-@Module({})
+@Module({
+  imports: [ParticipantsModule],
+})
 export class AppModule {}
