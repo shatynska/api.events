@@ -1,14 +1,14 @@
 import { PrismaClient } from '@prisma/client';
 import { seedEvents } from './seeds/seed-events';
 import { seedReferrals } from './seeds/seed-referrals';
-import { seedUsers } from './seeds/seed-users';
+import { seedParticipants } from './seeds/seed-participants';
 
 const prisma = new PrismaClient();
 
 async function seed() {
   await seedEvents(prisma);
   await seedReferrals(prisma);
-  await seedUsers(prisma);
+  await seedParticipants(prisma);
 }
 
 seed()

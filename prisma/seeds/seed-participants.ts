@@ -1,7 +1,7 @@
 import { PrismaClient } from '@prisma/client';
 
-export async function seedUsers(prisma: PrismaClient) {
-  await prisma.user.upsert({
+export async function seedParticipants(prisma: PrismaClient) {
+  await prisma.participant.upsert({
     where: { id: '3739dacf-18f5-4e2a-a8d2-f414ce254ec2' },
     update: {},
     create: {
