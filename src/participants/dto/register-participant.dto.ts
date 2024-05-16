@@ -5,5 +5,5 @@ export class RegisterParticipantDto extends createZodDto(
   ParticipantDtoSchema.omit({
     id: true,
     registeredAt: true,
-  }),
+  }).required(),
 ) {}
