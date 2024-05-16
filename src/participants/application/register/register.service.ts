@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { RegisterParticipantDto } from './dto/register-participant.dto';
-import { ParticipantsRepository } from './participants.repository';
+import { PrismaRepository } from '~/participants/infrastructure/persistence/prisma.repository';
+import { RegisterParticipantDto } from '../dto/register-participant.dto';
 
 @Injectable()
-export class ParticipantsService {
-  constructor(private repository: ParticipantsRepository) {}
+export class RegisterService {
+  constructor(private repository: PrismaRepository) {}
 
   async register(registerParticipantDto: RegisterParticipantDto) {
     // TODO Add check whether the user is already registered for this event
