@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import { PrismaService } from '~/prisma/prisma.service';
-import { RegisterParticipantDto } from './dto/register-participant.dto';
+import { PrismaService } from '~/shared/prisma/prisma.service';
+import { RegisterParticipantDto } from '../../application/dto/register-participant.dto';
 
 @Injectable()
-export class ParticipantsRepository {
+export class PrismaRepository {
   constructor(private readonly prismaService: PrismaService) {}
 
   async register(dto: RegisterParticipantDto): Promise<void> {
