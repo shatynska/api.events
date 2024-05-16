@@ -1,5 +1,5 @@
 import { createZodDto } from '@anatine/zod-nestjs';
-import { ParticipantDtoSchema } from './participant.dto';
+import { ParticipantDtoSchema, participantDtoStubs } from './participant.dto';
 
 export class ParticipantCoreDto extends createZodDto(
   ParticipantDtoSchema.pick({
@@ -10,3 +10,9 @@ export class ParticipantCoreDto extends createZodDto(
     registeredAt: true,
   }),
 ) {}
+
+export const participantCoreDtoStubs: ParticipantCoreDto[] =
+  participantDtoStubs.map((dto) => {
+    const { id, fullName, email, eventId, registeredAt } = dto;
+    return { id, fullName, email, eventId, registeredAt };
+  });
