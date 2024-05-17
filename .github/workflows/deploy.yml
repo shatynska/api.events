@@ -5,7 +5,7 @@ env:
   DOCKER_IMAGE_NAME: api-events-shatynska
   PORTAINER_PROJECT_NAME: api_events_shatynska
   PORT: 3000
-  API_BASE_URL: 'https://events.shatynska.com/api'
+  API_BASE_URL: 'https://shatynska.com/api'
 
 on:
   push:
